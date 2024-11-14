@@ -17,6 +17,7 @@ export default function CriarConta() {
             </div>
             <div className="flex flex-col gap-1 space-y-4 md:w-1/2">
                 <Input placeholder="username" />
+                <Input placeholder="email" />
                 <Input placeholder="palavra passe" />
                 <Input placeholder="confirmar palavra passe" />
                 <div className="flex justify-center">

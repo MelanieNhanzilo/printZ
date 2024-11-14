@@ -8,7 +8,7 @@ export default function PrintZ() {
         router.push('/imprimir')
     }
     const historico = () => {
-        router.push('/historico')
+        router.push('/Historico')
     }
     const saldo = () => {
         router.push('/saldo')
