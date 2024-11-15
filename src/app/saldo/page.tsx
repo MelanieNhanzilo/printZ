@@ -7,7 +7,7 @@ const usuarioService = new UsuarioService();
 export default function Saldo() {
   const [credits, setCredits] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const userId = 12; 
+  const userId = 13; 
 
   useEffect(() => {
     const fetchSaldo = async () => {
