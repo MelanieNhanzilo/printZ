@@ -19,24 +19,28 @@ export default function Login() {
       setError("Preencha todos os campos");
       return;
     }
+    
     setLoading(true);
     setError('');  
     const userData = { email, password };
+    
     try {
-      const response = await usuarioService.Login(userData);
-      if (response.status === 200) { 
-        localStorage.setItem('token', response.data.token); 
-        router.push('/menu');
-      } else {
-        setError("Credenciais inválidas.");
-      }
+        const response = await usuarioService.Login(userData);
+        
+        if (response.data.status) {
+            localStorage.setItem('token', response.data.token);
+            router.push('/menu');
+        } else {
+            setError(response.data.message || "Credenciais inválidas.");
+        }
     } catch (err) {
-      console.error('Erro ao fazer login', err);
-      setError('Erro ao tentar fazer login');
+        console.error('Erro ao fazer login', err);
+        setError('Erro ao tentar fazer login');
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
-  };
+};
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 w-screen">
       <div className="w-full max-w-md p-6">

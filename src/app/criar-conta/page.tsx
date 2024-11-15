@@ -40,6 +40,7 @@ export default function CriarConta() {
             setSubmitted(false);
             return;
         }
+
         try {
             await usuarioService.criarConta({ name, email, password, credits: creditsNumber });
             setSubmitted(false);
@@ -49,6 +50,7 @@ export default function CriarConta() {
             setSubmitted(false);
         }
     };
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-4 w-screen">
             <div className="w-full max-w-md p-6">

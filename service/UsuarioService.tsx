@@ -17,5 +17,9 @@ export class UsuarioService{
     Login(userData: { email: string,  password: string }) {
         return axiosInstance.post("/api/users/login", userData);  
     }
+
+    listarPorId(id: number) {
+        return axiosInstance.get(`/api/users/${id}`);
+    }
 }
 
